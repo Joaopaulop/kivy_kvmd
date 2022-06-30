@@ -1,0 +1,62 @@
+ScreenManager:
+    HomeScreen:
+        id:home 
+        name:"home"
+
+<HomeScreen>:
+    canvas:
+        Rectangle:
+            size:self.size
+            pos: self.pos
+    FloatLayout:
+        Label:
+            pos_hint:{'top':1,'left':1}
+            size_hint:1,.1
+            text:'hello world!'
+            color:0,1,1,1
+        Label:
+            text:'Escolha a sua altura'
+            font_size:30
+            color:1,0,1,1
+            size_hint:1,.1
+            pos_hint:{'top':.85}
+        MDSlider:
+            id:height_value
+            min: 90
+            max: 250
+            value: 150
+            size_hint:1,.1
+            pos_hint:{'top':.75}
+            on_touch_up:
+                root.getValue()
+        Label:
+            text:'Escolha o seu peso'
+            font_size:30
+            color:1,0,1,1
+            size_hint:1,.1
+            pos_hint:{'top':.65}
+        MDCard:
+            size:"280dp","79dp"
+            size_hint: None,None 
+            pos_hint:{"center_x":.5,"center_y":.5}
+            MDIconButton:
+                icon:'plus'
+                user_font_size: "64sp"
+                on_release:
+                    root.increase()
+            Label:
+                text:str(root.peso) + "Kg"
+                font_size:40
+                color: 0,0,0,1   
+            MDIconButton:
+                icon:'minus'
+                user_font_size: "64sp"
+                on_release:
+                    root.decrease()
+            MDRaisedButton:
+                md_bg_color:1,0,1,1
+                size_hint: .8, .07
+                pos_hint:{"top":.2,"center_x":.5}
+                text:"calcular IMC"
+                on_release:
+                    root.calcular_imc()
