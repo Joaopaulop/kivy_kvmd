@@ -1,0 +1,45 @@
+#:kivy 2.1
+
+ScreenManager:
+    HomeScreen:
+        id:home
+        name:'home'
+
+
+<HomeScreen>:
+    FloatLayout:
+        MDTextFieldRound:
+            hint_text:'Nome da cidade'
+            id: city_name
+            pos_hint: {'top':.6,'left':1}
+            size_hint: .5,.06
+        MDTextFieldRound:
+            hint_text:'Nome do país'
+            id: country_name
+            pos_hint: {'top':.9,'left':1}
+            size_hint: .35,.06
+        
+        MDRaisedButton:
+            text:'buscar'
+            pos_hint:{'top':.8,'right':.7}
+            size_hint: .5,.08
+
+        Label:
+            text:'Now'
+            font_size:30
+            pos_hint:{'top':.7}
+            size_hint: 1,.1
+        
+        Label:
+            text:'26 c'
+            font_size:30
+            pos_hint:{'top':.6,'left':1}
+            size_hint: .5,.1
+            color: 0,1,1,1
+
+        Label:
+            text:'sunny'
+            font_size:30
+            pos_hint:{'top':.6,'right':1}
+            size_hint: .5,.1
+            color: 0,1,1,1
